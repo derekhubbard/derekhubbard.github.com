@@ -5,7 +5,7 @@
 	text-align: center;
 	position: relative;
 	display: none;
-	width: 70%;
+	@include border-shadow();
 	&:hover{
 		a{
 			color: $color-main;

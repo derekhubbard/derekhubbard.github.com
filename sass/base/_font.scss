@@ -4,9 +4,6 @@ $font-mono: Menlo, Monaco, "Andale Mono", "lucida console", "Courier New", monos
 $font-icon: FontAwesome;
 $font-icon-path: "/font/fontawesome-webfont";
 
-$title-font: Collegiate;
-$title-font-path: "/font/collegiate";
-
 @font-face {
 	font-family: 'FontAwesome';
 	src: url('#{$font-icon-path}.eot');
@@ -17,12 +14,4 @@ $title-font-path: "/font/collegiate";
 		url('#{$font-icon-path}.svg#FontAwesomeRegular') format('svg');
 	font-weight: normal;
 	font-style: normal;
-}
-
-@font-face {
-	font-family: 'Collegiate';
-	src: url('#{$title-font-path}.ttf') format('truetype');
-	font-weight: bold;
-	font-style: normal;
-	letter-spacing: -1px;
 }

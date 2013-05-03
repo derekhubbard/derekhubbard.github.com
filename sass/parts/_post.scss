@@ -1,20 +1,16 @@
 .post{
-	h1.title, .entry-content{
-		color: black;
+	h2.title, .entry-content{
 		@media screen and (max-width: 800px){
 			margin-left: 0;
 		}
 	}
 	.meta{
-		top: 85px;
 		line-height: 2;
-		font-size: 14px;
-		color: #666;
-		width: 170px;
-		margin-bottom: 15px;
-		font-style: italic;
+		font-size: 0.7em;
+		color: $color-gray02;
+		width: 370px;
 		@media screen and (max-width: 800px){
-			margin-top: 5px;
+			margin-top: 15px;
 			position: static;
 			width: auto;
 		}
@@ -23,6 +19,7 @@
 			@include transition(0.3s);
 		}
 		.date, .tags, .comments{
+			padding-left: 30px;
 			position: relative;
 			&:before{
 				color: $color-gray03;
@@ -36,5 +33,8 @@
 				margin-right: 30px;
 			}
 		}
+		.date:before{content: "\f073";}
+		.tags:before{content: "\f02c";}
+		.comments:before{content: "\f075";}
 	}
 }
