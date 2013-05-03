@@ -1,8 +1,0 @@
----
-layout: post
-title: "Zombies"
-date: 2013-04-07 00:39
-comments: true
-categories: [test1]
----
-Hello world!
