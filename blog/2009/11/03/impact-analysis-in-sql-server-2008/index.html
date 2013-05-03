@@ -1,0 +1,236 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Impact Analysis in SQL Server 2008 - derek hubbard</title>
+  <meta name="author" content="Derek Hubbard">
+
+  
+  <meta name="description" content="A colleague of mine and I were confronted with an issue today when we did not perform a proper code search before making some database schema changes &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://derekhubbard.github.com/blog/2009/11/03/impact-analysis-in-sql-server-2008">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/derekhubbard/atom.xml" rel="alternate" title="derek hubbard" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-9397993-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   class="collapse-sidebar sidebar-footer" >
+  <header role="banner"><hgroup>
+  <h1><a href="/">derek hubbard</a></h1>
+  
+    <h2>think. code. blog.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/derekhubbard/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<!--<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:derekhubbard.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>-->
+  
+<ul class="main-navigation">
+  <li><a href="/">home</a></li>
+  <!--<li><a href="/blog/archives">Archives</a></li>-->
+  <li><a href="http://www.twitter.com/derekhubbard">twitter</a></li>
+  <li><a href="https://github.com/derekhubbard">github</a></li>
+  <li><a href="http://stackoverflow.com/users/557399/derek-hubbard">stackoverflow</a></li>
+  <li><a href="http://www.linkedin.com/in/derekhubbard">linkedin</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Impact Analysis in SQL Server 2008</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-11-03T00:00:00-05:00" pubdate data-updated="true">Nov 3<span>rd</span>, 2009</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>A colleague of mine and I were confronted with an issue today when we did not perform a proper code search before making some database schema changes to an existing SQL Server 2008 database.&#160; This made me realize that I don&#8217;t think I&#8217;ve ever performed an impact analysis on code within SQL Server.&#160; Impact analysis on my application code is like second nature to me, but the idea of analyzing my SQL Server code was not something I had thought of before.</p>  <p>Impact analysis is extremely important when making changes to an existing application - especially if the changes you are making include database schema changes.&#160; This is even more important if the application you are changing is an existing production application. if users are working with your application, they aren&#8217;t going to be happy if they have runtime errors in their application every time you touch the codebase.&#160; The specific project my colleague and I are working on is still in development, so we didn&#8217;t cause any major production issues as a result of the schema changes we made, however, this may not be the case every time we make schema changes in the future.</p>  <p>A quick search on <a href="http://www.stackoverflow.com">StackOverflow</a> shows that I&#8217;m not the first developer to ask this <a href="http://stackoverflow.com/questions/1364633/search-for-a-key-word-in-all-the-stored-procs-for-a-given-db">question</a>.&#160; Also, I&#8217;m sure I&#8217;m not the last person to ask about it either, so I thought it was worth repeating here in case anyone else is interested.</p>  <p>In my scenario, I needed a way to search all of the existing stored procedures to see if an existing database column and relationship were referenced.&#160; The easiest way to do this is a quick keyword search through all of the stored procedures.&#160; Our database has over 100 stored procedures, so searching each one by hand wasn&#8217;t feasible.&#160; Plus, we&#8217;re developers - when we are confronted with situations like this in the future, we should be looking for a quick way to automate this type of task.</p>  <p>One of the responses to this <a href="http://stackoverflow.com/questions/1364633/search-for-a-key-word-in-all-the-stored-procs-for-a-given-db">question on StackOverflow</a> suggest running a quick SQL query against the database you want to search, plugging in the keyword you want to search for.</p>  <pre>SELECT DISTINCT(sysobjects.name)<br />FROM sysobjects,syscomments
+WHERE sysobjects.id = syscomments.id
+AND sysobjects.type = 'P'
+AND sysobjects.category=0
+AND CHARINDEX(&lt;the keyword&gt;,syscomments.text)&gt;0</pre>
+
+<p>Just replace the placeholder &#8216;&lt;the keyword&gt;&#8217; with the keyword you want to find.&#160; This query can easily be thrown into a stored procedure (with the keyword as a parameter) and you can call this every time you need to perform an impact analysis on your SQL Server stored procedures before making changes in the future.&#160; Your colleagues. and your boss. will appreciate this, trust me.</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Derek Hubbard</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-11-03T00:00:00-05:00" pubdate data-updated="true">Nov 3<span>rd</span>, 2009</time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://derekhubbard.github.com/blog/2009/11/03/impact-analysis-in-sql-server-2008/" data-via="" data-counturl="http://derekhubbard.github.com/blog/2009/11/03/impact-analysis-in-sql-server-2008/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2009/10/29/upcoming-speaking-event/" title="Previous Post: Upcoming Speaking Event">&laquo; Upcoming Speaking Event</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2010/03/20/blog-2-0-new-engine-new-template-new-posts/" title="Next Post: Blog 2.0: New Engine, New Template, New Posts">Blog 2.0: New Engine, New Template, New Posts &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2012/11/02/visual-studio-2012-application-lifecycle-management-virtual-machine-labs-with-virtualbox/">Visual Studio 2012 Application Lifecycle Management Virtual Machine & Labs with VirtualBox</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/10/07/organizing-your-tfs-build-definitions-with-inmeta-build-explorer/">Organizing Your TFS Build Definitions with Inmeta Build Explorer</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/04/27/webinar-continuous-deployment-with-team-build-and-msdeploy/">Webinar: Continuous Deployment with Team Build and MSDeploy</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/04/02/heterogeneous-development-with-team-foundation-and-visual-studio-2010/">Heterogeneous Development with Team Foundation and Visual Studio 2010</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/04/02/book-review-rework/">Book Review: Rework</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - Derek Hubbard -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>
