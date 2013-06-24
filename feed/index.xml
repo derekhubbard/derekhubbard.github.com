@@ -4,7 +4,7 @@
   <title><![CDATA[derek hubbard]]></title>
   <link href="http://derekhubbard.github.io/feed" rel="self"/>
   <link href="http://derekhubbard.github.io/"/>
-  <updated>2013-06-24T13:44:14-04:00</updated>
+  <updated>2013-06-24T13:50:30-04:00</updated>
   <id>http://derekhubbard.github.io/</id>
   <author>
     <name><![CDATA[Derek Hubbard]]></name>
@@ -14,10 +14,10 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Effective Remote Standup Meetings With the TFS Task Board]]></title>
-    <link href="http://derekhubbard.github.io/blog/2013/06/24/sprint-planning-with-the-tfs-2012-planning-board-equals-awesome/"/>
+    <title type="html"><![CDATA[More Effective Daily Scrums with the TFS 2012 Task Board]]></title>
+    <link href="http://derekhubbard.github.io/blog/2013/06/24/more-effective-daily-scrums-with-the-tfs-task-board/"/>
     <updated>2013-06-24T00:00:00-04:00</updated>
-    <id>http://derekhubbard.github.io/blog/2013/06/24/sprint-planning-with-the-tfs-2012-planning-board-equals-awesome</id>
+    <id>http://derekhubbard.github.io/blog/2013/06/24/more-effective-daily-scrums-with-the-tfs-task-board</id>
     <content type="html"><![CDATA[<p>Some of my favorite new features in TFS 2012 are the <a href="http://blogs.msdn.com/b/jasonz/archive/2012/05/29/my-favorite-features-managing-projects-with-the-backlog-sprint-planning-and-taskboard-features-in-team-foundation-server-11.aspx">significant improvements</a> to the TFS web client.  Sprint planning and execution has never been easier - especially for remote teams - when using the new team task board in TFS 2012.</p>
 
 <h3>The Perfect World</h3>
