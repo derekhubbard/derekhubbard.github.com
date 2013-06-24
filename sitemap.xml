@@ -67,12 +67,18 @@
         <lastmod>2013-04-25T23:21:32-04:00</lastmod>
     </url>
     <url>
+        <loc>
+            http://derekhubbard.github.io/blog/2013/06/24/sprint-planning-with-the-tfs-2012-planning-board-equals-awesome/
+        </loc>
+        <lastmod>2013-06-24T13:44:05-04:00</lastmod>
+    </url>
+    <url>
         <loc>http://derekhubbard.github.io/about/</loc>
         <lastmod>2013-04-07T01:23:18-04:00</lastmod>
     </url>
     <url>
         <loc>http://derekhubbard.github.io/blog/archives/</loc>
-        <lastmod>2013-04-25T23:24:57-04:00</lastmod>
+        <lastmod>2013-06-24T13:44:05-04:00</lastmod>
     </url>
     <url>
         <loc>http://derekhubbard.github.io/feed/index.xml</loc>
@@ -80,7 +86,7 @@
     </url>
     <url>
         <loc>http://derekhubbard.github.io/</loc>
-        <lastmod>2013-04-25T23:24:57-04:00</lastmod>
+        <lastmod>2013-06-24T13:44:05-04:00</lastmod>
     </url>
     <url>
         <loc>http://derekhubbard.github.io/robots.txt</loc>
