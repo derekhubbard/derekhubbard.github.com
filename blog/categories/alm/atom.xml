@@ -4,7 +4,7 @@
   <title><![CDATA[Category: ALM | derek hubbard]]></title>
   <link href="http://derekhubbard.github.io/blog/categories/alm/atom.xml" rel="self"/>
   <link href="http://derekhubbard.github.io/"/>
-  <updated>2013-06-24T13:50:30-04:00</updated>
+  <updated>2013-06-24T13:54:38-04:00</updated>
   <id>http://derekhubbard.github.io/</id>
   <author>
     <name><![CDATA[Derek Hubbard]]></name>
@@ -22,13 +22,13 @@
 
 <h3>The Perfect World</h3>
 
-<p>I have been working with a remote team for the last two years and our biggest challenge has always been communication - especially because <em>everyone</em> is remote, not just one or two individuals.  The <a href="http://www.flickr.com/photos/scrumshortcuts/6435649305/">Daily Scrum</a> helps keep the communication lines flowing for the team at the beginning of each day.  Being part of a remote team, this is usually handled with an audio conference bridge.  And more often than not, it's challenging to form a good understanding of what each team member is actively working on.</p>
+<p>I have been working with a remote team for the last two years and our biggest challenge has always been communication - especially because <em>everyone</em> is remote, not just one or two individuals.  The Daily Scrum helps keep the communication lines flowing for the team at the beginning of each day.  Being part of a remote team, this is usually handled with an audio conference bridge.  And more often than not, it's challenging to form a good understanding of what each team member is actively working on.</p>
 
 <p>In a perfect world, if we were all colocated, this wouldn't be an issue - the development team would reap the benefits of standing together as a group for our Daily Scrum, gathered in the same room, most likely in front of a physical task board used to track work throughout the sprint.  Everyone would be able to identify what work has been completed, what is in progress, and what is remaining.  We could even plot our own burndown on the white board to gauge if we will finish on time.</p>
 
 <h3>Reality</h3>
 
-<p>Unfortunately, the colocated Daily Scrum isn't an option for us, but the next best thing is for the team to review the new team task board together.  The team task board, which ships with both Team Foundation Server 2012 and TF Service, is a virtual representation of the physical task board used by colocated teams.  Virtual sticky notes can be moved from one swim lane to another, while updating the affected work items behind the scenes.<br/>
+<p>Unfortunately, the colocated Daily Scrum isn't an option for us, but the next best thing is for the team to review the new team task board together.  The team task board, which ships with both Team Foundation Server 2012 and TF Service, is a virtual representation of the <a href="http://www.flickr.com/photos/scrumshortcuts/6435649305/">physical task board</a> used by colocated teams.  Virtual sticky notes can be moved from one swim lane to another, while updating the affected work items behind the scenes.<br/>
 <strong>Bonus: Have a touch-enabled desktop or Windows 8 tablet?  The task board supports touch events, allowing users to drag virtual stickies from one swim lane to the next. </strong></p>
 
 <p><img class="center" src="/images/posts/5428.Figure-10_21E749CD.png" title="TFS 2012 Task Board" alt="An image of the TFS 2012 Task Board"></p>
