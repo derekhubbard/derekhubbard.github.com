@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: 
 
-Sitemap: http://derekhubbard.github.com/sitemap.xml 
+Sitemap: http://derekhubbard.github.io/sitemap.xml 
