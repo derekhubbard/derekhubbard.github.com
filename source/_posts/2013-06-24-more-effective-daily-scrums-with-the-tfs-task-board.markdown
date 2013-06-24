@@ -1,7 +1,7 @@
 ---
 
 layout: post
-title: "Effective Remote Standup Meetings With the TFS Task Board"
+title: "More Effective Daily Scrums with the TFS 2012 Task Board"
 date: 2013-06-24
 comments: true
 categories: 
