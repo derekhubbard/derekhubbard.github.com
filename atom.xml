@@ -4,7 +4,7 @@
   <title><![CDATA[derek hubbard]]></title>
   <link href="http://derekhubbard.github.io/atom.xml" rel="self"/>
   <link href="http://derekhubbard.github.io/"/>
-  <updated>2013-07-12T12:32:57-04:00</updated>
+  <updated>2013-07-29T21:51:00-04:00</updated>
   <id>http://derekhubbard.github.io/</id>
   <author>
     <name><![CDATA[Derek Hubbard]]></name>
@@ -12,6 +12,35 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[CodeStock 2013 - Conference Wrap Up]]></title>
+    <link href="http://derekhubbard.github.io/blog/2013/07/13/codestock-2013-conference-wrap-up/"/>
+    <updated>2013-07-13T23:35:00-04:00</updated>
+    <id>http://derekhubbard.github.io/blog/2013/07/13/codestock-2013-conference-wrap-up</id>
+    <content type="html"><![CDATA[<p>This is a little belated, but I did want to recap the two great days I spent in Knoxville, TN on July 12th-13th at CodeStock 2013. Many thanks to all of the organizers, sponsors, speakers, and attendees.  The session content this year was a great! Here is a quick recap of a few of the great sessions I had the privilege of attending:</p>
+
+<h3>An Honest Look at Being Independent - <a href="https://twitter.com/beefarino">Jim Christopher</a></h3>
+
+<p>I started off the conference with a look into the world of being an independent developer.  The tax implications involved when going independent and organizing as an LLC vs 1099 were definitely interesting.  Note for my future self: hire a lawyer to clarify all of this for me when I decide to take off as an independent developer.</p>
+
+<h3>Agile Retrospectives For High Performing Teams: Experiments to Take Them to the Next Level - <a href="https://twitter.com/derekhubbard">Derek Hubbard</a></h3>
+
+<p>Next up was my session on Agile Retrospectives.  After a quick count of the number of attendees in the room before I started, I think there were at least 30 people in the room - plus a few additional late arrivals - so a great turnout.  This was my first time presenting this session and the amount of participation from the attendees was great.  I have some ideas to tighten up the presentation for next time.  If you attended my session and have any feedback - both good or bad - definitely <a href="https://twitter.com/derekhubbard">hit me up on Twitter</a> and let me know!</p>
+
+<h3>Getting Started with iOS Development with Xamarin - <a href="https://twitter.com/smartyp">Roger Peters</a></h3>
+
+<p>After a quick bite to eat, I caught a good introduction to iOS development with Xamarin. When it comes to learning a new tech, this session and another &#8220;Intro to Xamarin&#8221; session by Firefly Logic&#8217;s <a href="https://twitter.com/ben_henderson">Ben Henderson</a> were probably the most interesting to me.  The possibilities of where Xamarin will head in the upcoming months and years are exciting.</p>
+
+<h3>Avoiding Scrummerfall - <a href="https://twitter.com/cromwellryan">Ryan Cromwell</a></h3>
+
+<p>Day 2 of CodeStock 2013 started with a great session from my colleague, Ryan Cromwell, on how to avoid the pitfalls of &#8220;Scrummerfall.&#8221;  It&#8217;s way too easy for teams to fall back into the bad habits of waterfall and Ryan did a great job of going through some of the indicators that identify your team might be sliding back towards waterfall without even realizing it.</p>
+
+<h3>Become an Outlier: Career Advice for the Developer Mind - <a href="https://twitter.com/housecor">Cory House</a></h3>
+
+<p>The next session of the day was probably the highlight of my weekend. Cory&#8217;s session on how to become an &#8220;Outlier&#8221;, which is loosely based on <a href="http://en.wikipedia.org/wiki/Malcolm_Gladwell">Malcolm Gladwell&#8217;s</a> book <a href="http://www.amazon.com/Outliers-Story-Success-Malcolm-Gladwell/dp/0316017930">&#8220;Outliers&#8221;</a>, was a thoughtprovoking look into how to enhance your skillset as a developer and work towards becoming an &#8220;outlier&#8221; - a person with a high level of success.  Cory&#8217;s blend of personal anecdotes, humor, and even an inspirational <a href="http://www.youtube.com/watch?v=vBvppEgFJkw">video narrated by Alan Watts</a> all combined for a great session.  If you have the opportunity to catch Cory&#8217;s &#8220;Outliers&#8221; session at a conference near you, you won&#8217;t regret it - it&#8217;s time well spent.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[CodeStock 2013 - Agile Retrospectives for High Performing Teams]]></title>
