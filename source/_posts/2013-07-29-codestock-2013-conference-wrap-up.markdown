@@ -4,7 +4,7 @@ title: "CodeStock 2013 - Conference Wrap Up"
 date: 2013-07-13 23:35
 comments: true
 categories: 
-publish: false
+published: true 
 
 ---
 This is a little belated, but I did want to recap the two great days I spent in Knoxville, TN on July 12th-13th at CodeStock 2013. Many thanks to all of the organizers, sponsors, speakers, and attendees.  The session content this year was a great! Here is a quick recap of a few of the great sessions I had the privilege of attending:  

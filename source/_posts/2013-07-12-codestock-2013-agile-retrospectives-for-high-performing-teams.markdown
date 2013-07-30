@@ -5,7 +5,7 @@ title: "CodeStock 2013 - Agile Retrospectives for High Performing Teams"
 date: 2013-07-12 12:16
 comments: true
 categories: [Speaking, Agile, Scrum, Retrospective]
-publish: true
+published: true
 
 ---
 Thanks to everyone that checked out my [presentation][sessionLink] on "Agile Retrospectives for High Performing Teams" at [CodeStock 2013][codeStockLink].  Hopefully you walked away with some ideas of new experiments to try with your Agile teams when you get back to work on Monday.  
