@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Scrum | derek hubbard]]></title>
   <link href="http://derekhubbard.github.io/blog/categories/scrum/atom.xml" rel="self"/>
   <link href="http://derekhubbard.github.io/"/>
-  <updated>2013-07-30T22:50:04-04:00</updated>
+  <updated>2013-10-31T13:45:33-04:00</updated>
   <id>http://derekhubbard.github.io/</id>
   <author>
     <name><![CDATA[Derek Hubbard]]></name>
@@ -18,7 +18,7 @@
     <link href="http://derekhubbard.github.io/blog/2013/07/12/codestock-2013-agile-retrospectives-for-high-performing-teams/"/>
     <updated>2013-07-12T12:16:00-04:00</updated>
     <id>http://derekhubbard.github.io/blog/2013/07/12/codestock-2013-agile-retrospectives-for-high-performing-teams</id>
-    <content type="html"><![CDATA[<p>Thanks to everyone that checked out my <a href="http://www.codestock.org/sessions/agile-retrospectives-for-high-performing-teams-experiments-to-take-them-to-the-next-level/">presentation</a> on "Agile Retrospectives for High Performing Teams" at <a href="http://www.codestock.org/">CodeStock 2013</a>.  Hopefully you walked away with some ideas of new experiments to try with your Agile teams when you get back to work on Monday.</p>
+    <content type="html"><![CDATA[<p>Thanks to everyone that checked out my <a href="http://www.codestock.org/sessions/agile-retrospectives-for-high-performing-teams-experiments-to-take-them-to-the-next-level/">presentation</a> on &ldquo;Agile Retrospectives for High Performing Teams&rdquo; at <a href="http://www.codestock.org/">CodeStock 2013</a>.  Hopefully you walked away with some ideas of new experiments to try with your Agile teams when you get back to work on Monday.</p>
 
 <p>The slides from my presentation are embedded below.  Feel free to take back to your teams!  And definitely hit me up on Twitter (<a href="https://twitter.com/derekhubbard">@derekhubbard</a>) if you have some awesome retrospective ideas that work well with your teams and you want to share!</p>
 
@@ -34,22 +34,22 @@
     <link href="http://derekhubbard.github.io/blog/2013/06/24/more-effective-daily-scrums-with-the-tfs-task-board/"/>
     <updated>2013-06-24T00:00:00-04:00</updated>
     <id>http://derekhubbard.github.io/blog/2013/06/24/more-effective-daily-scrums-with-the-tfs-task-board</id>
-    <content type="html"><![CDATA[<p>Some of my favorite new features in TFS 2012 are the <a href="http://blogs.msdn.com/b/jasonz/archive/2012/05/29/my-favorite-features-managing-projects-with-the-backlog-sprint-planning-and-taskboard-features-in-team-foundation-server-11.aspx">significant improvements</a> to the TFS web client.  Sprint planning and execution has never been easier - especially for remote teams - when using the new team task board in TFS 2012.</p>
+    <content type="html"><![CDATA[<p>Some of my favorite new features in TFS 2012 are the <a href="http://blogs.msdn.com/b/jasonz/archive/2012/05/29/my-favorite-features-managing-projects-with-the-backlog-sprint-planning-and-taskboard-features-in-team-foundation-server-11.aspx">significant improvements</a> to the TFS web client.  Sprint planning and execution has never been easier &ndash; especially for remote teams &ndash; when using the new team task board in TFS 2012.</p>
 
 <h3>The Perfect World</h3>
 
-<p>I have been working with a remote team for the last two years and our biggest challenge has always been communication - especially because <em>everyone</em> is remote, not just one or two individuals.  The Daily Scrum helps keep the communication lines flowing for the team at the beginning of each day.  Being part of a remote team, this is usually handled with an audio conference bridge.  And more often than not, it's challenging to form a good understanding of what each team member is actively working on.</p>
+<p>I have been working with a remote team for the last two years and our biggest challenge has always been communication &ndash; especially because <em>everyone</em> is remote, not just one or two individuals.  The Daily Scrum helps keep the communication lines flowing for the team at the beginning of each day.  Being part of a remote team, this is usually handled with an audio conference bridge.  And more often than not, it&rsquo;s challenging to form a good understanding of what each team member is actively working on.</p>
 
-<p>In a perfect world, if we were all colocated, this wouldn't be an issue - the development team would reap the benefits of standing together as a group for our Daily Scrum, gathered in the same room, most likely in front of a physical task board used to track work throughout the sprint.  Everyone would be able to identify what work has been completed, what is in progress, and what is remaining.  We could even plot our own burndown on the white board to gauge if we will finish on time.</p>
+<p>In a perfect world, if we were all colocated, this wouldn&rsquo;t be an issue &ndash; the development team would reap the benefits of standing together as a group for our Daily Scrum, gathered in the same room, most likely in front of a physical task board used to track work throughout the sprint.  Everyone would be able to identify what work has been completed, what is in progress, and what is remaining.  We could even plot our own burndown on the white board to gauge if we will finish on time.</p>
 
 <h3>Reality</h3>
 
-<p>Unfortunately, the colocated Daily Scrum isn't an option for us, but the next best thing is for the team to review the new team task board together.  The team task board, which ships with both Team Foundation Server 2012 and TF Service, is a virtual representation of the <a href="http://www.flickr.com/photos/scrumshortcuts/6435649305/">physical task board</a> used by colocated teams.  Virtual sticky notes can be moved from one swim lane to another, while updating the affected work items behind the scenes.<br/>
+<p>Unfortunately, the colocated Daily Scrum isn&rsquo;t an option for us, but the next best thing is for the team to review the new team task board together.  The team task board, which ships with both Team Foundation Server 2012 and TF Service, is a virtual representation of the <a href="http://www.flickr.com/photos/scrumshortcuts/6435649305/">physical task board</a> used by colocated teams.  Virtual sticky notes can be moved from one swim lane to another, while updating the affected work items behind the scenes.<br/>
 <strong>Bonus: Have a touch-enabled desktop or Windows 8 tablet?  The task board supports touch events, allowing users to drag virtual stickies from one swim lane to the next. </strong></p>
 
-<p><img class="center" src="/images/posts/5428.Figure-10_21E749CD.png" title="TFS 2012 Task Board" alt="An image of the TFS 2012 Task Board"></p>
+<p><img class="center" src="/images/posts/5428.Figure-10_21E749CD.png" title="&lsquo;TFS 2012 Task Board&rsquo; &lsquo;An image of the TFS 2012 Task Board&rsquo;" ></p>
 
-<p>Simply reviewing the task board together as a team on a daily basis not only helped ensure everyone was actively working on what we committed to at the beginning of the sprint, but also helped everyone on the team form a shared understanding of what each team member is working on and how that work fits into the team's overall sprint goals.  Team collaboration and communication for the win.</p>
+<p>Simply reviewing the task board together as a team on a daily basis not only helped ensure everyone was actively working on what we committed to at the beginning of the sprint, but also helped everyone on the team form a shared understanding of what each team member is working on and how that work fits into the team&rsquo;s overall sprint goals.  Team collaboration and communication for the win.</p>
 ]]></content>
   </entry>
   
