@@ -89,16 +89,22 @@
         <lastmod>2013-08-13T22:19:15-04:00</lastmod>
     </url>
     <url>
+        <loc>
+            http://derekhubbard.github.io/blog/2013/11/01/css3-child-pseudo-selectors-how-to-single-out-the-special-children/
+        </loc>
+        <lastmod>2013-11-01T10:47:43-04:00</lastmod>
+    </url>
+    <url>
         <loc>http://derekhubbard.github.io/about/</loc>
         <lastmod>2013-08-13T22:19:15-04:00</lastmod>
     </url>
     <url>
         <loc>http://derekhubbard.github.io/blog/archives/</loc>
-        <lastmod>2013-08-13T22:19:15-04:00</lastmod>
+        <lastmod>2013-11-01T10:47:43-04:00</lastmod>
     </url>
     <url>
         <loc>http://derekhubbard.github.io/blog/</loc>
-        <lastmod>2013-08-13T22:19:15-04:00</lastmod>
+        <lastmod>2013-11-01T10:47:43-04:00</lastmod>
     </url>
     <url>
         <loc>http://derekhubbard.github.io/feed/index.xml</loc>
@@ -106,7 +112,7 @@
     </url>
     <url>
         <loc>http://derekhubbard.github.io/</loc>
-        <lastmod>2013-08-13T22:19:15-04:00</lastmod>
+        <lastmod>2013-11-01T10:47:43-04:00</lastmod>
     </url>
     <url>
         <loc>http://derekhubbard.github.io/robots.txt</loc>
