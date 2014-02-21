@@ -1,0 +1,230 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Visual Studio 2012 Application Lifecycle Management Virtual Machine & Labs with VirtualBox - derek hubbard</title>
+  <meta name="author" content="Derek Hubbard">
+
+  
+  <meta name="description" content="If you are interested in learning and playing around with the new features in Visual Studio 2012 and Team Foundation Server 2012, but do not have &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://derekhubbard.github.io/blog/2012/11/02/visual-studio-2012-application-lifecycle-management-virtual-machine-labs-with-virtualbox">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/derekhubbard/atom.xml" rel="alternate" title="derek hubbard" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-9397993-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   class="collapse-sidebar sidebar-footer" >
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/derekhubbard/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<!--<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:derekhubbard.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>-->
+  
+<ul class="main-navigation">
+  <li><a href="/">home</a></li>
+  <!--<li><a href="/blog/archives">Archives</a></li>-->
+  <li><a href="http://www.twitter.com/derekhubbard">twitter</a></li>
+  <li><a href="https://github.com/derekhubbard">github</a></li>
+  <li><a href="http://stackoverflow.com/users/557399/derek-hubbard">stackoverflow</a></li>
+  <li><a href="http://www.linkedin.com/in/derekhubbard">linkedin</a></li>
+</ul>
+
+</nav>
+  <header role="banner"><hgroup>
+  <h1><a href="/">derek hubbard</a></h1>
+  
+    <h2>think. code. blog.</h2>
+  
+</hgroup>
+
+</header>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Visual Studio 2012 Application Lifecycle Management Virtual Machine & Labs With VirtualBox</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-11-02T00:00:00-04:00" pubdate data-updated="true">Nov 2<span>nd</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>If you are interested in learning and playing around with the new features in Visual Studio 2012 and Team Foundation Server 2012, but do not have access to a TFS 2012 environment yet (or maybe you get slapped on the wrist every time you try to install something new on your work machine), then the <a href="http://blogs.msdn.com/b/briankel/archive/2011/09/16/visual-studio-11-application-lifecycle-management-virtual-machine-and-hands-on-labs-demo-scripts.aspx">Visual Studio 2012 Application Lifecycle Management (ALM) Virtual Machine</a> is for you.&nbsp; </p> <p>The ALM demo virtual machine includes both Visual Studio 2012 and Team Foundation Server 2012, plus you also get 20 hands on labs that walk you through all of the new features. The demo virtual machine is only good for a trial period of 180 days, but you can most likely expect a refreshed version of the virtual machine from Microsoft before then.&nbsp; </p> <h3>VirtualBox Support</h3> <p>The demo virtual machine will also work with VirtualBox, even though the blog post and release notes state the machine is built for Hyper-V.&nbsp; </p> <p>To run the virtual machine with VirtualBox, download and expand the self-extracting RAR files first, following the instructions provided in Brian Keller’s blog post.&nbsp; </p> <p>After extracting, you now need to create a new virtual machine using VirtualBox.&nbsp; When creating the new virtual machine, specify Windows 2008 (64-bit) for the VM operating system.&nbsp; </p> <p><a href="/images/posts/SNAGHTML562929a.png"><img style="background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px; padding-top: 0px" title="SNAGHTML562929a" border="0" alt="SNAGHTML562929a" src="/images/posts/SNAGHTML562929a_thumb.png" width="553" height="361"></a></p> <p>Specify an appropriate amount of memory for your new virtual machine on the next screen.&nbsp; The amount of memory you designate for your virtual machine may vary on the hardware in your machine.&nbsp;&nbsp;&nbsp; </p> <p><a href="/images/posts/SNAGHTML56ea38b.png"><img style="background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px; padding-top: 0px" title="SNAGHTML56ea38b" border="0" alt="SNAGHTML56ea38b" src="/images/posts/SNAGHTML56ea38b_thumb.png" width="551" height="360"></a></p> <p>For the Virtual Hard Disk, specify “Use existing hard disk” and locate the vhd that was contained in the folder structure generated by the self-extracting RAR files.&nbsp; </p> <p><a href="/images/posts/SNAGHTML563d718.png"><img style="background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px; padding-top: 0px" title="SNAGHTML563d718" border="0" alt="SNAGHTML563d718" src="/images/posts/SNAGHTML563d718_thumb.png" width="558" height="364"></a></p> <p>You’re almost done – click Create!</p> <p>After creating, you will need to make sure you do one last step.&nbsp; Hyper-V will only build a bootable IDE hard disk, so you will need to change the settings of your new virtual machine to attach the hard disk as a bootable IDE, instead of SATA, which is the default.&nbsp; Just delete the existing hard disk, which was by default attached via the SATA controller, and add a new hard disk using the IDE controller, again pointing to the vhd which you extracted earlier.&nbsp; </p> <p>Thanks to Olof Szymczak for explaining <a href="http://ollysense.blogspot.com/2010/05/virtualbox-using-hyper-v-vhd-image.html">how to open a Hyper-V VM in VirtualBox</a>.&nbsp; </p> <p><a href="/images/posts/SNAGHTML572dd9e.png"><img style="background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px; padding-top: 0px" title="SNAGHTML572dd9e" border="0" alt="SNAGHTML572dd9e" src="/images/posts/SNAGHTML572dd9e_thumb.png" width="565" height="422"></a></p> <p>You are done.&nbsp; Launch your ALM virtual machine and “get your learning on!”</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Derek Hubbard</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-11-02T00:00:00-04:00" pubdate data-updated="true">Nov 2<span>nd</span>, 2012</time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://derekhubbard.github.io/blog/2012/11/02/visual-studio-2012-application-lifecycle-management-virtual-machine-labs-with-virtualbox/" data-via="" data-counturl="http://derekhubbard.github.io/blog/2012/11/02/visual-studio-2012-application-lifecycle-management-virtual-machine-labs-with-virtualbox/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2011/10/07/organizing-your-tfs-build-definitions-with-inmeta-build-explorer/" title="Previous Post: Organizing Your TFS Build Definitions with Inmeta Build Explorer">&laquo; Organizing Your TFS Build Definitions with Inmeta Build Explorer</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2013/06/24/more-effective-daily-scrums-with-the-tfs-task-board/" title="Next Post: More Effective Daily Scrums with the TFS 2012 Task Board">More Effective Daily Scrums with the TFS 2012 Task Board &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/11/01/css3-child-pseudo-selectors-how-to-single-out-the-special-children/">CSS3 Child Pseudo-Selectors: How To Single Out the Special Children</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/07/30/if-we-arent-focusing-on-shipping/">If We Aren't Focusing on Shipping, Then What The Hell Are We Doing?</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/07/13/codestock-2013-conference-wrap-up/">CodeStock 2013 - Conference Wrap Up</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/07/12/codestock-2013-agile-retrospectives-for-high-performing-teams/">CodeStock 2013 - Agile Retrospectives for High Performing Teams</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/06/24/more-effective-daily-scrums-with-the-tfs-task-board/">More Effective Daily Scrums with the TFS 2012 Task Board</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - Derek Hubbard -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

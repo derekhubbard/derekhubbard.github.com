@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Retrospective | derek hubbard]]></title>
+  <link href="http://derekhubbard.github.io/blog/categories/retrospective/atom.xml" rel="self"/>
+  <link href="http://derekhubbard.github.io/"/>
+  <updated>2014-02-20T23:24:22-05:00</updated>
+  <id>http://derekhubbard.github.io/</id>
+  <author>
+    <name><![CDATA[Derek Hubbard]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[CodeStock 2013 - Agile Retrospectives for High Performing Teams]]></title>
+    <link href="http://derekhubbard.github.io/blog/2013/07/12/codestock-2013-agile-retrospectives-for-high-performing-teams/"/>
+    <updated>2013-07-12T12:16:00-04:00</updated>
+    <id>http://derekhubbard.github.io/blog/2013/07/12/codestock-2013-agile-retrospectives-for-high-performing-teams</id>
+    <content type="html"><![CDATA[<p>Thanks to everyone that checked out my <a href="http://www.codestock.org/sessions/agile-retrospectives-for-high-performing-teams-experiments-to-take-them-to-the-next-level/">presentation</a> on &ldquo;Agile Retrospectives for High Performing Teams&rdquo; at <a href="http://www.codestock.org/">CodeStock 2013</a>.  Hopefully you walked away with some ideas of new experiments to try with your Agile teams when you get back to work on Monday.</p>
+
+<p>The slides from my presentation are embedded below.  Feel free to take back to your teams!  And definitely hit me up on Twitter (<a href="https://twitter.com/derekhubbard">@derekhubbard</a>) if you have some awesome retrospective ideas that work well with your teams and you want to share!</p>
+
+<iframe src="http://slid.es/derekhubbard/agile-retrospectives/embed" width="576" height="420" scrolling="no" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
+
+
+]]></content>
+  </entry>
+  
+</feed>

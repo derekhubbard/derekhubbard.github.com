@@ -1,0 +1,394 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>CSS3 Child Pseudo-Selectors: How To Single Out the Special Children - derek hubbard</title>
+  <meta name="author" content="Derek Hubbard">
+
+  
+  <meta name="description" content="When working with HTML lists, there will be a time when you want to modify the styles for the first or last item in the list. For example, maybe you &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://derekhubbard.github.io/blog/2013/11/01/css3-child-pseudo-selectors-how-to-single-out-the-special-children">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/derekhubbard/atom.xml" rel="alternate" title="derek hubbard" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-9397993-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   class="collapse-sidebar sidebar-footer" >
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/derekhubbard/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<!--<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:derekhubbard.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>-->
+  
+<ul class="main-navigation">
+  <li><a href="/">home</a></li>
+  <!--<li><a href="/blog/archives">Archives</a></li>-->
+  <li><a href="http://www.twitter.com/derekhubbard">twitter</a></li>
+  <li><a href="https://github.com/derekhubbard">github</a></li>
+  <li><a href="http://stackoverflow.com/users/557399/derek-hubbard">stackoverflow</a></li>
+  <li><a href="http://www.linkedin.com/in/derekhubbard">linkedin</a></li>
+</ul>
+
+</nav>
+  <header role="banner"><hgroup>
+  <h1><a href="/">derek hubbard</a></h1>
+  
+    <h2>think. code. blog.</h2>
+  
+</hgroup>
+
+</header>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">CSS3 Child Pseudo-Selectors: How to Single Out the Special Children</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-11-01T00:00:00-04:00" pubdate data-updated="true">Nov 1<span>st</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>When working with HTML lists, there will be a time when you want to modify the styles for the first or last item in the list. For example, maybe you increase the margin between each item, but also need an additional buffer before the first item or after the last item in the list.</p>
+
+<p>This has traditionally been solved using special CSS classes that are applied to only the first and last items in the list. But wouldn&rsquo;t it be nice if the HTML markup only had to worry about the content and your styles could deal with selecting and styling the first/last items in the list?</p>
+
+<p>Enter the CSS3 selectors of <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:first-child">&ldquo;first-child&rdquo;</a> and <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:last-child">&ldquo;last-child&rdquo;</a>.  These selectors aren&rsquo;t anything new as they have been part of the CSS3 spec for years.  But I find this design pattern coming in handy frequently, so it&rsquo;s worth repeating here.</p>
+
+<p>For the examples below, let&rsquo;s use an unordered list of items. In this case, our items are characters from Game of Thrones.</p>
+
+<figure class='code'><figcaption><span>index.html </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'>
+</span><span class='line'>        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;hero-unit&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>          <span class="nt">&lt;p&gt;</span>Game of Thrones Selector Fun<span class="nt">&lt;/p&gt;</span>
+</span><span class='line'>          <span class="nt">&lt;ul&gt;</span>
+</span><span class='line'>            <span class="nt">&lt;li&gt;</span>Tyrion<span class="nt">&lt;/li&gt;</span>
+</span><span class='line'>            <span class="nt">&lt;li&gt;</span>Jaime<span class="nt">&lt;/li&gt;</span>
+</span><span class='line'>            <span class="nt">&lt;li&gt;</span>Cersei<span class="nt">&lt;/li&gt;</span>
+</span><span class='line'>            <span class="nt">&lt;li&gt;</span>Daenerys<span class="nt">&lt;/li&gt;</span>
+</span><span class='line'>            <span class="nt">&lt;li&gt;</span>Jon<span class="nt">&lt;/li&gt;</span>
+</span><span class='line'>            <span class="nt">&lt;li&gt;</span>Tywin<span class="nt">&lt;/li&gt;</span>
+</span><span class='line'>            <span class="nt">&lt;li&gt;</span>Bran<span class="nt">&lt;/li&gt;</span>
+</span><span class='line'>          <span class="nt">&lt;/ul&gt;</span>
+</span><span class='line'>        <span class="nt">&lt;/div&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>first-child, last-child</h3>
+
+<p>The pseudo-selectors of &ldquo;first-child&rdquo; and &ldquo;last-child&rdquo; give that additional level of control for styling just the first or last elements in a collection of child elements, and let you do that without cluttering up your markup with additional classes.</p>
+
+<p>For example, using the &ldquo;last-child&rdquo; selector, you can easily modify the bottom margin of the last item in the list to match the top margin that is already applied to all of the items in the list.</p>
+
+<figure class='code'><figcaption><span>main.css </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'>
+</span><span class='line'><span class="nt">ul</span> <span class="p">{</span>
+</span><span class='line'>    <span class="k">border</span><span class="o">:</span> <span class="m">1px</span> <span class="k">solid</span> <span class="nb">black</span><span class="p">;</span>
+</span><span class='line'>    <span class="k">list-style-type</span><span class="o">:</span> <span class="k">none</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">li</span> <span class="p">{</span>
+</span><span class='line'>    <span class="k">margin-top</span><span class="o">:</span> <span class="m">10px</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">li</span><span class="nd">:last-child</span> <span class="p">{</span>
+</span><span class='line'>    <span class="k">margin-bottom</span><span class="o">:</span> <span class="m">10px</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>nth-child</h3>
+
+<p>The <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:nth-child">&ldquo;nth-child&rdquo;</a> pseudo-selector gives you even more control, allowing you to select a specific occurrence of a child element.  Let&rsquo;s say you want to style the background color of the 2nd item in the list.  No big deal with the &ldquo;nth-child&rdquo; pseudo-selector. Just remember that the first item in the list is element 1 &ndash; no zero based lists here!</p>
+
+<figure class='code'><figcaption><span>main.css </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'>
+</span><span class='line'><span class="nt">ul</span> <span class="p">{</span>
+</span><span class='line'>    <span class="k">border</span><span class="o">:</span> <span class="m">1px</span> <span class="k">solid</span> <span class="nb">black</span><span class="p">;</span>
+</span><span class='line'>    <span class="k">list-style-type</span><span class="o">:</span> <span class="k">none</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">li</span> <span class="p">{</span>
+</span><span class='line'>    <span class="k">margin-top</span><span class="o">:</span> <span class="m">10px</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">li</span><span class="nd">:last-child</span> <span class="p">{</span>
+</span><span class='line'>    <span class="k">margin-bottom</span><span class="o">:</span> <span class="m">10px</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">li</span><span class="nd">:nth-child</span><span class="o">(</span><span class="nt">2</span><span class="o">)</span> <span class="p">{</span>
+</span><span class='line'>    <span class="k">background-color</span><span class="o">:</span> <span class="m">#C0C0C0</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Even and Odd Children</h3>
+
+<p>For our Game of Thrones character list, just changing the background color of the 2nd item in the list isn&rsquo;t that useful. But, we can use the same pseudo-selector to style the background color of all of the even/odd items in the list.  To do this, we use the &ldquo;even&rdquo; or &ldquo;odd&rdquo; keyword with the nth-child selector to select just the even/odd items.</p>
+
+<figure class='code'><figcaption><span>main.css </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'>
+</span><span class='line'><span class="nt">ul</span> <span class="p">{</span>
+</span><span class='line'>    <span class="k">border</span><span class="o">:</span> <span class="m">1px</span> <span class="k">solid</span> <span class="nb">black</span><span class="p">;</span>
+</span><span class='line'>    <span class="k">list-style-type</span><span class="o">:</span> <span class="k">none</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">li</span> <span class="p">{</span>
+</span><span class='line'>    <span class="k">margin-top</span><span class="o">:</span> <span class="m">10px</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">li</span><span class="nd">:last-child</span> <span class="p">{</span>
+</span><span class='line'>    <span class="k">margin-bottom</span><span class="o">:</span> <span class="m">10px</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">li</span><span class="nd">:nth-child</span><span class="o">(</span><span class="nt">even</span><span class="o">)</span> <span class="p">{</span>
+</span><span class='line'>    <span class="k">background-color</span><span class="o">:</span> <span class="m">#C0C0C0</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Browser Support</h3>
+
+<p>Whenever we discuss CSS, it&rsquo;s worth reviewing the browser support for these <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference">selectors</a>. As of this time, all of these selectors are supported in the latest versions of the major desktop and mobile browsers, but some browsers (a&#8217;hem &ndash; IE) did not support all of these selectors until more recently. For example, IE has supported the &ldquo;first-child&rdquo; selector since IE7, but did not add support for &ldquo;last-child&rdquo; or &ldquo;nth-child&rdquo; until IE9.</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Derek Hubbard</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-11-01T00:00:00-04:00" pubdate data-updated="true">Nov 1<span>st</span>, 2013</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/css/'>CSS</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://derekhubbard.github.io/blog/2013/11/01/css3-child-pseudo-selectors-how-to-single-out-the-special-children/" data-via="" data-counturl="http://derekhubbard.github.io/blog/2013/11/01/css3-child-pseudo-selectors-how-to-single-out-the-special-children/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2013/07/30/if-we-arent-focusing-on-shipping/" title="Previous Post: If We Aren't Focusing on Shipping, Then What The Hell Are We Doing?">&laquo; If We Aren't Focusing on Shipping, Then What The Hell Are We Doing?</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/11/01/css3-child-pseudo-selectors-how-to-single-out-the-special-children/">CSS3 Child Pseudo-Selectors: How To Single Out the Special Children</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/07/30/if-we-arent-focusing-on-shipping/">If We Aren't Focusing on Shipping, Then What The Hell Are We Doing?</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/07/13/codestock-2013-conference-wrap-up/">CodeStock 2013 - Conference Wrap Up</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/07/12/codestock-2013-agile-retrospectives-for-high-performing-teams/">CodeStock 2013 - Agile Retrospectives for High Performing Teams</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/06/24/more-effective-daily-scrums-with-the-tfs-task-board/">More Effective Daily Scrums with the TFS 2012 Task Board</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - Derek Hubbard -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>
